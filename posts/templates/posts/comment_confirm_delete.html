@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Comment{% endblock %}
+{% block content %}
+<div class="container-md border border-black p-2 mb-2 border-opacity-75 customform rounded-2 size550">
+    <p class="h4 text-center">Delete Comment</p>
+    <hr>
+    <form  method="post">
+        {% csrf_token %}
+        <p class="h4 text-center">
+            Are you sure? Your comment: <br>
+            '{{ comment.text }}' <br>
+            will be deleted.
+        </p>
+        <button class="btn btn-outline-danger btn50-c" type="submit">Remove</button>
+    </form>
+</div>
+{% endblock %}

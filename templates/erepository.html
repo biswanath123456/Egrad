@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-desc">
+    <div class="side-10">
+        <img src="{% static 'assets/books.png' %}" alt="" srcset="" class="icon">
+    </div>
+    <div class="side-90">
+        <h1 class="page-heading" id="title">Repository</h1>
+    <h1 id="content">A Place to Secure your Documents <span>Upload and Download from Anywhere.</span></h1>
+    </div>
+</div>
+    <p class=" h3 text-center my-2">
+        Upload Documents: 
+        <a href="{% url 'repository:upload' %}" class="btn btn-success" style="display: inline;">Upload</a>
+    </p>
+        <table class="table w-75 my-1 mx-auto text-dark">
+            <thead class="table-success">
+                <tr>
+                    <th scope="col" colspan="2">Filename</th>
+                    <th scope="col" class="text-center ">Download</th>
+                    <th scope="col" class="text-center ">Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for document in documents %}
+                    {% if request.user == document.user %}
+                    <tr>
+                        <td class="h6 " colspan="2">{{ document.description}}</td>
+                    
+                        <td class="text-center ">
+                            <a class="btn btn-success w-50 mx-auto" href="{% url 'repository:download' pk=document.id %}" style="display: inline;">Download</a>
+                        </td>
+                        <td class="text-center ">
+                            <a class="btn btn-danger w-50 mx-auto" href="{% url 'repository:delete' pk=document.pk %}" style="display: inline;">Delete</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                {% empty %}
+                   
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

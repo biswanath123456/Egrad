@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Delete Post{% endblock %}
+{% block content %}
+<div class="container-md border border-black p-2 mb-2 border-opacity-75 customform rounded-2 size550">
+    <p class="h4 text-center">Delete Post</p>
+    <hr>
+    <form  method="post">
+        {% csrf_token %}
+        <p class="h4 text-center">
+            Are you sure? Your post: <br>
+            '{{ post.title }}' <br>
+            will be deleted.
+        </p>
+        <button class="btn btn-outline-danger btn50-c" type="submit">Delete</button>
+    </form>
+</div>
+{% endblock %}

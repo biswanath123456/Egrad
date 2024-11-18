@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/Home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>E-Grad</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2><a href="{% url 'Home:home' %}" class="n">E-GRad</a></h2>
+            <ul id="nv">
+                {% if request.user.is_authenticated %}
+                <li class="nl"> <a href="{% url 'Home:dash' %}" target="_blank" class="n">E-Exam</a> </li>
+                <li class="nl"><a href="{% url 'posts:list'%}" class="n">Open Forum</a></li>
+                <li class="nl"><a href="{% url 'repository:erep' %}"  class="n">e-Repository</a></li>
+                <li class="nl"><a href="{%url 'wall:list' pk=user.pk %}" class="n">My Wall</a></li>
+                <li class="nl"><a href="{%url 'Home:logout'%}" class="n">Log Out</a></li>
+                {% else %}
+                <li class="nl"><a href="{% url 'Home:signup' %}" class="n">Signup</a></li>
+                <li class="nl"><a href="{% url 'Home:login' %}" class="n">Log In</a></li>
+                {% endif %}
+                <!-- <li class="nl"><a href="#" class="n">Log In</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section class="container" style="background:url('/static/Attachments/w1.png'); opacity:0.8;">
+        <div class="welcome-section">
+            <h1 id="title">E-GRad</h1>
+            <h1 id="content">A Companion to Test your Knowledge <span>An Innovative Way of Education</span></h1>
+            {% if request.user.is_authenticated %}
+            <div class="button-f">
+                <h1 style="margin-left:15%;">Welcome {{user.first_name}} {{user.last_name}}</h1>
+                <a href="{%url 'Home:logout'%}" style="text-decoration: none; margin:130px" target="_blank"><button class="btn">Logout</button></a>
+            </div>
+            {% else %}
+            <div class="button-f">
+                <a href="{% url 'Home:login' %}" style="text-decoration: none;" target="_blank"><button class="btn" id="up"> Login</button></a>
+                <a href="{% url 'Home:signup' %}" style="text-decoration: none;" target="_blank"><button class="btn">Register</button></a>
+            </div>
+            {% endif %}
+    </section>
+    
+    <a id="down" href="#f"><ion-icon name="arrow-down-outline"></ion-icon> <p>Scroll Down</p> </ion-icon></a>
+    <section>
+        <br id="f"><br>
+        <div class="hero">
+            <h1>FEATURES</h1>
+            <div class="cards">
+                <div class="tab">
+                    <div class="text-card">
+                        <h2 class="feature">E-Exam Portal</h2>
+                        <h4>Want to test you understanding? Test IT</h4>
+                        <p>It is a well-sructured Portal for conducting exams.It provides a time restraint MCQ based Question Paper.The User can test his understanding level through this feature.</p>
+                    </div>
+                    <div class="pic">
+                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-test-4443442-3685795.png" alt="" srcset="">
+                    </div>
+                </div>
+                
+                <div class="tab">
+                    <div class="pic">
+                        <img src="https://hiremee.co.in/assets/hiremee-revamp/images/products/online-exam-banner.png" alt="" srcset="">
+                    </div>
+                    <div class="text-card">
+                        <h2 class="feature">Open Forum</h2>
+                        <h4>Have doubts? Ask your Friends.</h4> 
+                        <p>This feature allows you to communicate with the whole forum and help to connect you with your peers.It is basically a open classroom discussion page where stidents can resolve their queries on their own accord.</p>
+                    </div>
+                </div>
+                
+                <div class="tab">
+                    <div class="text-card">
+                        <h2 class="feature">e-Repository</h2>
+                        <h4>Having difficulty acquiring and storing Document? Have it in your figure Tips.</h4>
+                        <p>This Feature allows you to contribute and collect valuable notes and other important documents.It is a secure portal document storage house which you can access from anywhere. </p>
+                    </div>
+                    <div class="pic">
+                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/social-media-image-upload-4358258-3618854.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear:both"></div>
+    <div class="overlay"></div>
+    <!-- <div class="upload">
+        <button class="cross">&times;</button>
+            <h1 style="text-align: center;border-bottom: 2px solid #eeeaea;">Log In</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <th>Email:</th>
+                        <td><input type="text" placeholder="Email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <th>Password:</th>
+                        <td><input type="password" placeholder="Password" name="pas" required></td>
+                    </tr>
+                    <tr><td colspan="2" style="text-align: center;">Not registered? <a href="/signup" style="text-decoration:none;">  Sign Up</a></td></tr>
+                </table>
+                <input type="submit" value="Log In">
+            </form>
+    </div> -->
+    <footer>
+        <div class="contact">
+          <h3>Contact Us</h3>
+          <p>Email: example@example.com</p>
+          <p>Phone: 123-456-7890</p>
+          <p>Address: 123 Main St, Bhubaneswar india</p>
+        </div>
+        
+        <div class="social-icons">
+          <a href="https://www.instagram.com/"><img src="/static/Attachments/instagram-icon.png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/"><img src="/static/Attachments/Facebook-icon.png" alt="Facebook"></a>
+          <a href="https://twitter.com/"><img src="/static/Attachments/twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <div style="clear: both; text-align: right;">
+            &copy;2023
+        </div>
+      </footer>    
+</body>
+<script src="/static/JS/e-Repo.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

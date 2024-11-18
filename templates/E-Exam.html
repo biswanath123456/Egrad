@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal</title>
+    <link rel="stylesheet" href="/static/CSS/E-Exam.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/CSS/E-Exam.css">
+</head>
+<body>
+    <div id="title">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        <h1>SILICON INSTITUTE OF TECHNOLOGY</h1>
+        <h4>BRANCH: CSE</h4>
+        <h3>SUBJECT: DATA STRUCTURES AND ALGORITHMS</h3>
+    </div>
+    <section id="exam">
+        <div class="container" id="l">
+            <div id="qs">
+                <form action="">
+                    <div id="q1" class="q">
+                        <p><b>1. How is an array initialized in C language?</b></p>
+                        <label><input type="radio" name="q1" id="" >int a[3] = {1,2,3};</label><br>
+                        <label><input type="radio" name="q1" id="" >int a = {1,2,3};</label><br>
+                        <label><input type="radio" name="q1" id="" >int a[] = new int[3];</label><br>
+                        <label><input type="radio" name="q1" id="" >int a(3) = [1,2,3];</label><br>
+                    </div>
+                    
+                    <div id="q2" class="q">
+                        <p><b>2. Which of the following is a linear data structure</b></p>
+                        <label><input type="radio" name="q2" id="">Array</label><br>
+                        <label><input type="radio" name="q2" id="">Tree</label><br>
+                        <label><input type="radio" name="q2" id="">Heap</label><br>
+                        <label><input type="radio" name="q2" id="">Graphs</label><br>
+                    </div>
+                    
+                    <div id="q3" class="q">
+                        <p><b>3. How is the 2nd element in an array accessed based on pointer notation</b></p>
+                        <label><input type="radio" name="q3" id="">*a+2</label><br>
+                        <label><input type="radio" name="q3" id="">*(a+2)</label><br>
+                        <label><input type="radio" name="q3" id="">*(*a+2)</label><br>
+                        <label><input type="radio" name="q3" id="">&(a+2)</label><br>
+                    </div>
+                    
+                    <div id="q4" class="q">
+                        <p><b>4. Which of the following is not type of queue?</b></p>
+                        <label><input type="radio" name="q4" id="">Priority queue</label><br>
+                        <label><input type="radio" name="q4" id="">single ended queue</label><br>
+                        <label><input type="radio" name="q4" id="">circular queue</label><br>
+                        <label><input type="radio" name="q4" id="">Ordinary queue</label><br>
+                    </div>
+                    
+                    <div id="q5" class="q">
+                        <p><b>5. What function is used to append a character at the back of a string in c++</b></p>
+                        <label><input type="radio" name="q5" id="" >push_back()</label> <br>
+                        <label><input type="radio" name="q5" id="" >append()</label><br>
+                        <label><input type="radio" name="q5" id="" >push()</label><br>
+                        <label><input type="radio" name="q5" id="" >insert()</label>
+                    </div>
+                    <div class="btn">
+                        <a id="prev"><< Previous</a>
+                        <a id="nxt">Next >></a>
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="container" id="r">
+            <div id="time"></div>
+
+            <div id="tags">
+                <a href="#q1" id="t1">Question 1</a>
+                <a href="#q2" id="t2">Question 2</a>
+                <a href="#q3" id="t3">Question 3</a>
+                <a href="#q4" id="t4">Question 4</a>
+                <a href="#q5" id="t5">Question 5</a>
+            </div>
+        </div>
+    </section>
+    <section style="display: none;" id="end">
+        <h2>EXAM OVER<br>ANSWERS SUCCESSFULLY SUBMITTED</h2>
+        <table>
+                <tr>
+                    <th colspan="2">Results</th>
+                </tr>
+                <tr>
+                    <td class="t">Question.1</td>
+                    <td id="m1"></td>
+                </tr>
+                <tr>
+                    <td class="t">Question.2</td>
+                    <td id="m2"></td>
+                </tr>
+                <tr>
+                    <td class="t">Question.3</td>
+                    <td id="m3"></td>
+                </tr>
+                <tr>
+                    <td class="t">Question.4</td>
+                    <td id="m4"></td>
+                </tr>
+                <tr>
+                   <td class="t">Question.5</td>
+                   <td id="m5"></td>
+                </tr>
+                <tr style="background-color: #ab01e9fe;color: white;">
+                   <TD class="t" style="font-size: larger;font-weight: bolder;" >Total Marks:</TD>
+                   <td id="m" style="font-size: larger;font-weight: bolder;"></td>
+                </tr> 
+            </table>
+            <div class="d">
+                    <a href="/dashboard">Go To DashBoard</a>
+                </div>
+    </section>
+</body>
+<script src="/static/JS/E-Exam.js"></script>
+</html>

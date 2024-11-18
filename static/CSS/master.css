@@ -1,0 +1,245 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    
+    margin: 5px;
+    margin-top: 50px;
+    padding: 5px;
+    display: flex;
+    float: left;
+}
+.pic{
+    position: fixed;
+    margin-right: 5px;
+    width: 20%;
+    overflow-x: hidden;
+}
+.pic img{
+    /* scale: 0.8; */
+    margin-left: -100px;
+}
+.profile img{
+    scale:0.6;
+    margin-left: 0px;
+}
+#icon{
+    /* display: none; */
+    margin: 0px;
+    scale: 0.8;
+    /* position: -webkit-sticky; */
+    position: fixed;
+    top: 0px;
+}
+#photo{
+    position: fixed;
+    bottom:0px;
+    scale:1.2;
+}
+.OF{
+    position: fixed;
+    margin: 5px;
+    padding: 5px;
+    width:75%;
+    margin-left:20%;
+    /* border: 2px solid red; */
+}
+.head{
+    width:100%;
+    margin-bottom: 20px;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667483;
+
+}
+.head a{
+    background-color: #9601c8;
+    color: white;
+    padding:5px;
+    border-radius: 10px;
+}
+.container1
+{
+    background: url('https://img.freepik.com/premium-vector/seamless-pattern-with-social-media-networking-global-internet-communication-chatting-instant-messaging-symbols-white-background-vector-illustration-line-art-style-wallpaper_198278-7649.jpg?w=360');
+    background-repeat: repeat;
+    background-size: 100px;
+    /* background-color: rgba(237, 237, 237, 0.806); */
+    border-radius: 20px;
+    position: fixed;
+    /* right: 0; */
+    width: 75%;
+    padding: 20px;
+    height:500px;
+    overflow:auto;
+}
+.container1 div{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin:20px;
+    font-size: large;
+    margin-bottom: 0px;
+    color: white;
+}
+.topic{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    border-left: 5px solid #9601c8;
+    border-right:5px solid #9601c8;
+    /* display: flex;
+    float: left; */
+    width:90%;
+}
+/* .topic div{
+    border: 2px solid red;
+} */
+.container1 img{
+    display: flex; 
+    float: left; 
+    margin-right:3px;
+    padding:0px 5px 5px 0px;
+}
+.ion{
+    width:20px;
+    line-height: 2px;
+    height: 20px;
+}
+
+
+#title{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 60px;
+    padding: 10px;
+    color: #9601c8c7;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#content span{
+    display: block;
+    color: #667483;
+}
+
+body{
+    padding-top: 5%;
+}
+.createicon{
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+}
+
+.editicon{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.deleteicon{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+
+}
+.customform{
+    width: 550px;
+    margin: auto;
+}
+
+.customlink{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+.custompostlink{
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+.customimg{
+    width: 125px;
+    border-radius: 50%;
+}
+
+.customimg-sm{
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+.btn50-c{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.custombrand{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.containerx{
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+    max-height: 90vh;
+    padding-top: 5%;
+
+}
+.customdiv{
+    /* display: block; */
+    width: 100%;
+    padding: auto;
+}
+.profile{
+    text-align: center;
+}
+.profile-links{
+    padding-left: 19%;
+}
+/* below medium screen size */
+@media only screen and (max-width: 600px) {
+    .customform{
+        background: #131417;
+        width: 100%;
+    }
+    .customdiv{
+        display: block;
+        width: 100%;
+        padding: auto;
+    }
+    .containerx{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 85vh;
+        max-height: 90vh;
+    }
+}
+.sign-log{
+    margin-left: 25%;
+    width: 50%; 
+    background-color:rgb(255, 255, 255); 
+    border-radius: 9px;box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23); 
+    overflow: hidden; 
+    padding: 20px; 
+    transition: 0.7s; 
+    text-align: center; 
+    scale: 0.95; 
+    float:center;
+}

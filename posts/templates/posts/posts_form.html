@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="container-md border border-black p-2 mb-2 border-opacity-75 customform rounded-2 size550" style="width:fit-content;box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23)">
+    <p class="h4 text-center" style="font-weight:bolder;border-bottom:2px solid purple;font-size:xx-large;color:#9601c8">Create Post</p>
+    <form  method="post" class="sign-log">
+        {% csrf_token %}
+        {{ form.as_p}}
+        {% if form.instance.pk %}
+            <button class="btn btn-outline-primary" type="submit">Update</button>
+        {% else %}
+            <button class="btn btn-outline-success" type="submit">Create</button>
+        {% endif %}
+        <a class="btn btn-outline-secondary" href="{% url 'posts:list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock %}

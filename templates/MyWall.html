@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/CSS/MyWall.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'Home:home' %}" style="text-decoration: none;color: black;"><h2>E-GRad</h2></a>
+        <ul id="nv">
+            <li class="nl"> <a href="{% url 'Home:dash' %}" target="_blank" class="n">E-Exam</a> </li>
+            <li class="nl"><a href="{% url 'posts:list'%}"  class="n">Open Forum</a></li>
+            <li class="nl"><a href="{% url 'repository:erep' %}"  class="n">e-Repository</a></li>
+            <li class="nl"><a href="{%url 'wall:list' pk=user.pk%}" class="n">My Wall</a></li>
+            <li class="nl"><a href="{%url 'Home:logout'%}" class="n">Log Out</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="card-container">
+            <div class="div1">
+                    <div class="profile">
+                        <img src="/static/Attachments/profile.png" alt="Profile Picture">
+                    </div>
+                    <div class="details">
+                        <h1>{{user.first_name}} {{user.last_name}}</h1>
+                        <p>Silicon Institute Of Technology</p>
+                        {% comment %} <a href="{%url 'wall:edit' pk=user.profile.pk %}" id="edit">Edit Profile</a> {% endcomment %}
+                    </div>
+            </div>
+            <div class="div2">
+                <div class="cards">
+                    <h2>Personal details</h2>
+                        <table>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone:</th>
+                                <td>{{ user.profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address:</th>
+                                <td>{{ user.profile.address }}, {{ user.profile.city }},{{ user.profile.state }},{{ user.profile.zipcode }} </td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="cards">
+                    <h2>College Details</h2>
+                    <table>
+                        <tr>
+                            <th>College ID:</th>
+                            <td>{{ user.profile.college_Id }}</td>
+                        </tr>
+                        <tr>
+                            <th>College Name:</th>
+                            <td>{{ user.profile.college_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Course:</th>
+                            <td>{{ user.profile.course }}</td>
+                        </tr>
+                        <tr>
+                            <th>Batch:</th>
+                            <td>{{ user.profile.batch }}</td>
+                        </tr>
+                        <tr>
+                            <th>Current Semester:</th>
+                            <td>{{ user.profile.sem }}</td>
+                        </tr>
+                        <tr>
+                            <th>Branch:</th>
+                            <td>{{ user.profile.branch }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="pic">
+        <img src="https://visual-arts-sheffield.com/wp-content/uploads/2017/09/OF_web_logo_250.gif" id="icon">
+        <img src="http://greenrocketsecurity.com/wp-content/uploads/2022/03/online-learning-2890100-2403437.png" id="photo">
+    </div>
+    <div class="OF">
+        <div class="head">
+            <p class=" h5 text-secondary">
+                <i>"A place where bright minds come to learn and share knowledge, because collaboration is essential."</i>
+            </p>
+            <div style="text-align: right;">
+                <a class="customlink" href="{% url 'posts:create' %}" >
+                <ion-icon name="add-circle-outline" class="ion"></ion-icon> Post Question
+            </a>
+            </div>
+            
+        </div>
+        <div class="container1">
+            {% for post in posts %}
+                <div class="topic">
+                        <div class="col-1">
+                            <img src="{% static 'Attachments/profile.png' %}" width='16px' alt="" srcset="" class="customimg-sm">
+                        </div>
+                        <div class="col-10">
+                            <p class="h6" style="color: black;"><b>{{ post.author.first_name }} {{ post.author.last_name }}</b></p>
+                            <p class="h4"><a class="custompostlink link-info" href="{% url 'posts:details' pk=post.pk %}"><i>{{ post.title }}</i></a></p>
+                        </div>
+                </div>
+            {% empty %}
+                <h1>Posting Soon...Stay tuned!</h1>
+            {% endfor %}      
+        </div> 
+    
+        
+    </div>
+</section>
+<div style="clear:both"></div>
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+{% endblock %}

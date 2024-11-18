@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="pic">
+        <div class="profile">
+            <img src="{% static 'assets/default_user.png' %}" alt="" srcset="">
+            <p class="h5"><b>{{user.first_name}} {{user.last_name}}</b></p>
+            <p class="text-secondary" >{{user.email}}</p>
+        </div>
+        <br>
+        <div class="profile-links">
+            <p class="h4"><a class="customlink" href="http://">Author's Posts*</a></p>
+        </div>
+    </div>
+    <div class="OF">
+    
+        <div class="head">
+                <p class="h4"><b>{{post.title}}</b>
+                <span class="h5 text-secondary "><b>{{post.description}}</b></span>
+                <span class="text-secondary"><i>Posted on: {{post.posted_at}}</i></span></p>
+                <span class="text-secondary"><i>Posted on: {{post.image}}</i></span></p>
+                <div style="text-align: right;">                    
+                <a class="customlink" href="{% url 'posts:comment' pk=post.pk %}">
+                    <ion-icon name="add-circle-outline" class="ion"></ion-icon> comment
+                </a>
+            </div>
+
+        </div>
+        <!-- <div class="row">
+            <div class="col-10" >
+                <p class="h4" style="color: black;"><i>Comments</i></p>
+            </div>
+            
+        </div> -->
+        <div class="container1">
+        <br>
+        {% for comment in comments %}
+        <div class="topic">
+                <div class="col-1">
+                    <img src="{% static 'assets/default_user.png' %}" alt="" srcset="" class="customimg-sm">
+                </div>
+                <div class="col-10">
+                    <p class="h6" style="color:black">
+                        <b>{{ comment.commentator.first_name }} {{ comment.commentator.last_name }}</b>
+                    </p>
+                    <p class="h5 text-secondary">
+                        {{ comment.text }} 
+                    </p>
+                </div>
+                {% if comment.commentator.pk == user.pk %}
+                    <span class="col-1">
+                        <a class="customlink" href="{% url 'posts:editcomment' pk=comment.pk %}">
+                            <ion-icon class="ion"name="create-outline"></ion-icon> edit
+                        </a>
+                    </span>&nbsp;&nbsp;
+                    <span class="col-1">
+                        <a class="customlink" href="{% url 'posts:deletecomment' pk=comment.pk %}">
+                            <ion-icon class="ion" name="trash-outline"></ion-icon> delete
+                        </a>
+                    </span>
+                {% elif post.author.pk == user.pk %}
+                    <div class="col1"></div>
+                    <div class="col-1">
+                        <a class="customlink" href="{% url 'posts:deletecomment' pk=comment.pk %}">
+                            <ion-icon class="ion" name="trash-outline"></ion-icon> delete
+                        </a>
+                    </div>
+                {% endif %}
+
+        </div>
+        {% empty %}
+            <p class="h5 text-secondary">No comments yet.</p>
+        {% endfor %}
+    </div>
+    </div>
+</section>
+{% endblock %}
+
+    

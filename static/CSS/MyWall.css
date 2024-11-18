@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+  
+  body {
+      background:url('https://thumbs.dreamstime.com/b/basic-rgb-171757773.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      backface-visibility: 0.5;
+  }
+  nav h2{
+    display: inline;
+    padding: 3px;
+    margin: 3px;
+    transition: 0.5s;
+}
+nav h2:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgb(135, 33, 135);
+    border-radius: 8px;
+}
+nav{
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    font-size:medium;
+}
+#nv{
+    display: flex;
+    float: right;
+    list-style: none;
+    margin: 2px;
+}
+.n{
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px 2px 10px;
+    margin: 5px;
+}
+.nl::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background: rgb(135, 33, 135);
+    transition: width .3s ease-in;
+}
+.nl:hover::after{
+    width: 100%;
+}
+.nl:hover{
+    font-weight: bolder;
+}
+section{
+    margin: 5px;
+    margin-top: 50px;
+    padding: 5px;
+}
+.card-container {
+    display: flex;
+    float: left;
+    /* gap: 40px; add this line to adjust the gap */
+    padding: 5px;
+    margin-left: 100px;
+    width: 80%;
+    /* border: 2px solid red; */
+  }
+  
+  
+  .div1 {
+    width: 50%;
+    background-color:rgb(255, 255, 255); /* use rgba color value with an alpha value to set the background color with opacity */
+    border-radius: 9px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    overflow: hidden;
+    padding: 20px;
+    transition: 0.7s;
+    text-align: center;
+    scale: 0.95;
+}
+.details p{
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.div1 h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.div1 .profile img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 50px auto 20px auto;
+}
+
+.div2{
+    width: 50%;
+    clear: left;
+    top: 50%;
+}
+
+.div2 .cards{
+    width: 100%;
+    font-size: large;
+    background-color: rgb(255, 255, 255); /* set the background color to a translucent white */
+    border-radius: 9px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    /* margin: 40px;
+    margin-top: 20px; */
+    overflow: hidden;
+    padding: 30px;
+    transition: 0.9s;
+    scale: 0.95;
+}
+
+.cards h2{
+    color: white;
+    background-color:  #9601c8c7;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    padding: 10px;
+    padding-right: 30px;
+    margin:-30px -30px auto -30px;
+    text-align: right;
+}
+table{
+    width: 100%;
+    margin: 5px;
+}
+tr{
+    padding: 10px;
+    margin: 5px;
+}
+th,td{
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #eeeaea;
+}
+.div1:hover{
+    scale:0.98;
+}
+.cards:hover{
+    scale:0.98;
+}
+
+#edit{
+    display: block;
+    padding: 10px;
+    border: 2px solid #9601c8c7;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size:x-large;
+    transition: 0.3s;
+}
+#edit:hover{
+    background-color: #9601c8c7;
+    color: white;
+}
